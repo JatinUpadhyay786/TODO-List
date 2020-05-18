@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>
+            <%= title%>
+        </title>
+        <link rel="stylesheet" href="/css/home.css">
+
+
+    </head>
+    <body>
+        <div id=" todo">
+            <h1 id="centre">TODO App</h1>
+          <form action="/add-delete" id="add-task" method="POST" novalidate >
+            <div id="form-data">
+            <span>DESCRIPTION</span>
+            <input type="text" id="modification" name="descripton" required placeholder="What do you need to do?">
+            </div>
+            <div id="category">
+                <div id="form">
+                    <span>CATEGORY</span>
+                    <select name="category" >
+                            <option disabled selected value> -- select an option -- </option>
+
+                                    
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="school">School</option>
+                        <option value="other">Other</option>
+                      </select>
+                        
+
+                </div> 
+                <div id="form">
+                    <span>DUE DATE</span> 
+                    <input type="date" id="modification" name="date" required placeholder="dd/mm/yyyy">
+                </div>
+               
+
+            </div> 
+            <div id="button">
+                <button type="submit" id="add" name="submit_btn" value="add" >ADD TASK</button>
+                
+                
+
+        
+                <button type="submit" id="delete" name="submit_btn" value="delete"> DELETE TASKS</button>
+              
+
+            </div>
+
+
+          </form>
+
+          <div id="todo-list-container">
+              <ul id="display">
+                  <% for(let i of todo_list){%>
+                  <li class="todo-task">
+                      <div id="checkbox">
+                      <input type="checkbox" name="deleteIds"  value="<%= i._id %>" form="add-task" id="margin" >
+                      <div class="details">
+                          <p><%= i.description %></p>
+                          <p><%= i.date %></p>
+                          <p style="color: red;"><%= i.category %></p> 
+                   
+                         
+
+                      </div> 
+                     
+                      </div>
+                  </li>
+                  <% } %>
+                
+              </ul>
+
+          </div> 
+
+
+        
+
+
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "todo_project",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon home.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jain upadhyay",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.12",
+    "node-sass-middleware": "^0.11.0"
+  }
+}
